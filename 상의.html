@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>옷골라쇼핑몰</title>
+            <script src="jquery-3.4.1.min.js"></script>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap');
+                ul{
+                    display:block;
+                }
+                li{
+                    display:inline;
+                }
+                body{
+                    background-color: beige;
+                    width : 1500px;
+                }
+                div#wrapper{
+                    width : 100%;
+                    text-align : left;
+                    min-height : 300px;
+                    margin : 0 auto;
+                }
+                header, footer, nav, aside, section{
+                    
+                    margin:5px;
+                    padding : 10px;
+                }
+                header { 
+                    margin-left :15px;
+                    margin-right :15px;
+                    height : 50px;
+                    background-color: burlywood;
+                    border-bottom: 2px solid black;
+                    border-radius : 10px;
+                    box-shadow: 2px 2px grey;
+                }
+                nav, section, aside {
+                    float : left;
+                    height : 600px;
+                
+                }
+                section {
+                    margin-top: 30px;
+                    
+                    width :1470px;
+                }
+                article {
+                    display: inline-block;
+                    width : 95%;     
+                    height : 45%;
+                    margin-left:30px;
+                }
+                td.form{   
+                    margin:0px;
+                    padding:10px;
+                    width:140px;
+                    height:140px;
+                }
+                #menu{     
+                    position :absolute;
+                    top:20px;               
+                    left:250px;
+                    padding :0;
+                    margin : 0;
+                    width:1150px;
+                }
+                #menu li {
+                    display : inline-block;
+                    padding:0px;
+                    text-align:center;
+                    border-top-left-radius:10px;
+                    border-top-right-radius: 10px;
+                    font-size:19px;
+                    font-weight: bolder;
+                    width:208px;
+                    padding-top:12.5px;
+                    padding-bottom:12.5px;
+                    cursor:pointer;
+                }
+                #menu li a{
+                    display:block;
+                }
+                
+                #menu li:hover{
+                    background-color: rgb(214, 134, 30, 0.4);
+                    text-decoration: underline;
+                }
+
+                #menu ul li:hover{
+                    text-decoration: underline;
+                    background-color: (0,0,0,0.2);
+                }
+                #icon {
+                    display : inline-block;
+                    position: absolute;
+                    margin :0px;
+                    top:20px;
+                    left: 50px;
+                    width : 250px; 
+                    height : 50px;
+                }
+                #icon p{
+                    font-family: 'Ubuntu', sans-serif;
+                    font-size: 20px;
+                    margin:0px;
+                }
+                #icon p::first-letter{
+                    font-size:2em;
+                    color:navy;
+                }
+                #menu ul{position: absolute; display : none; padding-top:50px; top:50px; background: rgb(226, 216, 170);padding:0px; margin:0px; border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;}
+                #menu ul li{display:block;  border-radius: 0px; padding:0px; margin:0px; text-align:center; width :208px; line-height: 43px; }
+                a { text-decoration:none ; color:#000000}
+                
+            </style>
+            <script>
+                $(document).ready(function () {
+                    $("#menu li").hover(function(){
+                        $(this).find("ul").stop().fadeToggle(200);
+                    });
+                });     
+                           
+            </script>
+        </head>
+        <body>
+            <div id = "wrapper">
+                <header>
+                    <div id="icon">
+                        <p><a href = "D:\\대학\\강의자료\\2020년 2학기\\고급웹프로그래밍\\기말플젝\\home.html">OS GOLLA <span style="font-size:12px; color:brown">shop</span></a></p>
+                    </div>
+                    <ul id="menu">
+                        <li><a>TOP</a>
+                            <ul>
+                                <li><a>T-SHIRT</a></li>
+                                <li><a>SWEAT</a></li>
+                                <li><a>SHIRT</a></li>
+                                <li><a>NEAT</a></li>
+                            </ul></li>
+                        <li><a>BUTTOM</a>
+                            <ul>
+                                <li><a>T-SHIRT</a></li>
+                                <li><a>SWEAT</a></li>
+                                <li><a>SHIRT</a></li>
+                                <li><a>NEAT</a></li>
+                            </ul></li>
+                        <li><a>OUTER</a>
+                            <ul>
+                                <li><a>T-SHIRT</a></li>
+                                <li><a>SWEAT</a></li>
+                                <li><a>SHIRT</a></li>
+                                <li><a>NEAT</a></li>
+                            </ul></li>
+                        <li><a>SHOES</a>
+                            <ul>
+                                <li><a>T-SHIRT</a></li>
+                                <li><a>SWEAT</a></li>
+                                <li><a>SHIRT</a></li>
+                                <li><a>NEAT</a></li>
+                            </ul></li>
+                        <li><a>ACCESSORY</a>
+                            <ul>
+                                <li><a>T-SHIRT</a></li>
+                                <li><a>SWEAT</a></li>
+                                <li><a>SHIRT</a></li>
+                                <li><a>NEAT</a></li>
+                            </ul></li>
+                    </ul>
+                </header>
+                <section>
+                    <article>
+                        <p style="padding:0px; margin:0px;">TOP</p>
+                        <hr>
+                        <form>
+                            정렬 : 
+                            <select name ='sort'>
+                                <option value="">정렬방법</option>
+                                <option value="1">인기순</option>
+                                <option value="2">낮은 가격순</option>
+                                <option value="3">높은 가격순</option>
+                                <option value="4">평점순</option>
+                            </select>
+                        </form>
+                        <div style="margin:30px">
+                            <table border="1" width='1340' height='450'>
+                                <tr>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                </tr>
+                                <tr>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                    <td id='image'><a href=""><img src="" alt="no image"></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+                </section>
+        </body>
+    </html>

@@ -1,0 +1,17 @@
+create trigger trg_p_stock_del before delete on products
+for each row begin
+delete from p_stock where p_code=old.p_code;
+end;
+
+create trigger trg_insert_products after insert on products
+for each row begin
+insert into p_stock(p_code) values(new.p_code);
+end;
+
+create trigger trg_update_produts after update on products
+for each row begin
+update p_stock
+set p_code=new.p_code
+where p_code=old.p_code;
+end;
+
